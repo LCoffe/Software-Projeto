@@ -1,0 +1,10 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: /Users/T-GAMER/OneDrive/Documentos/frutas/dataset # Rota do diretorio do dataset
+train : imagens/train
+val : imagens/valid
+test: imagens/test
+
+# Classes
+names:
+  0: Laranja
+  1: Limao
