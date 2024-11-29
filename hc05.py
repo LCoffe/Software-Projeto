@@ -8,12 +8,6 @@ webcam = cv2.VideoCapture(0)
 if(not webcam.isOpened()):
     print("Error: Could not open webcam.")
 
-valid, frame = webcam.read()
-if valid:
-    cv2.imshow("Webcam", frame)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
 window = tk.Tk()
 window.configure(bg='black')
 window.geometry("500x500")
@@ -32,6 +26,13 @@ def motor_on():
 def motor_off():
     pin_5.write(0)
     pin_6.write(0)
+
+    valid, frame = webcam.read()
+    if valid:
+        cv2.imshow("Webcam", frame)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
     print("Motor OFF")
 
 button_on = tk.Button(window, text="ON", command=motor_on, bg='green', fg='white')
