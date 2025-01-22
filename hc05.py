@@ -19,6 +19,7 @@ board = Arduino('COM5')
 
 pin_5 = board.get_pin('d:5:p')
 pin_6 = board.get_pin('d:6:p')
+pin_9 = board.get_pin('d:9:p')
 
 def motor_on():
     pin_5.write(0.5)
@@ -29,7 +30,8 @@ def motor_off():
     pin_5.write(0)
     pin_6.write(0)
 
-    print(rcf.main()) # Função principal para reconhecimento.
+    respFruta = rcf.main()
+    pin_9.PWM_write(respFruta)
 
     print("Motor OFF")
 
