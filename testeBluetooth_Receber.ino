@@ -1,5 +1,5 @@
-motor+ = 5;
-motor- = 6;
+int motor+ = 5;
+int motor- = 6;
 void setup() {
   // Inicializa a comunicação serial
   Serial.begin(9600);
