@@ -1,19 +1,20 @@
 void setup() {
   // Inicializa a comunicação serial
   Serial.begin(9600);
-  
-  // Mensagem inicial
-  Serial.println("Aguardando número inteiro...");
 }
 
 void loop() {
+  int i = 0;
+  while(i > 60){
+    delay(1000);
+    i++;
+  }
+
+  Serial.println("1"); //Envia 1 na porta serial para o python ler
+
   if (Serial.available() > 0) {  // Verifica se há dados recebidos na porta serial
     String receivedData = Serial.readStringUntil('\n');  // Lê até o caractere de nova linha '\n'
     int receivedInt = receivedData.toInt();  // Converte a String para inteiro
-
-    // Exibe o valor recebido no monitor serial
-    Serial.print("Número recebido: ");
-    //Serial.println(receivedInt);
     if(receivedInt == 0){
       Serial.println("Achou algo diferente de limão e laranja");
     } else if(receivedInt < 180){
