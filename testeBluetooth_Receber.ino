@@ -1,10 +1,10 @@
-int motor+ = 5;
-int motor- = 6;
+int motorPlus = 5;
+int motorMinus = 6;
 void setup() {
   // Inicializa a comunicação serial
   Serial.begin(9600);
-  pinMode(motor+, OUTPUT);
-  pinMode(motor-, OUTPUT);
+  pinMode(motorPlus, OUTPUT);
+  pinMode(motorMinus, OUTPUT);
 }
 
 void loop() {
@@ -17,14 +17,16 @@ void loop() {
     int receivedInt = receivedData.toInt();  // Converte a String para inteiro
     if(receivedInt == 0){
       Serial.println("Achou algo diferente de limão e laranja");
+      analogWrite(motorPlus, 0);
+      analogWrite(motorMinus, 0.5);
     } else if(receivedInt < 180){
       Serial.println("Laranja");
-      analogWrite(motor+, 0.5);
-      analogWrite(motor-, 0);
+      analogWrite(motorPlus, 0.5);
+      analogWrite(motorMinus, 0);
     } else {
       Serial.println("Limão");
-      analogWrite(motor+, 0);
-      analogWrite(motor-, 0.5);
+      analogWrite(motorPlus, 0.5);
+      analogWrite(motorMinus, 0);
     }
   }
 }
