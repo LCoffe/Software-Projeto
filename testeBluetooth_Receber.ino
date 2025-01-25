@@ -8,11 +8,7 @@ void setup() {
 }
 
 void loop() {
-  int i = 0;
-  while(i > 60){
-    delay(1000);
-    i++;
-  }
+    delay(10000);
 
   Serial.println("1"); //Envia 1 na porta serial para o python ler
 
