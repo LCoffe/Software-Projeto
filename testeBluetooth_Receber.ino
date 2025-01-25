@@ -18,14 +18,14 @@ void loop() {
     if(receivedInt == 0){
       Serial.println("Achou algo diferente de limão e laranja");
       analogWrite(motorPlus, 0);
-      analogWrite(motorMinus, 0.5);
+      analogWrite(motorMinus, 128);
     } else if(receivedInt < 180){
       Serial.println("Laranja");
-      analogWrite(motorPlus, 0.5);
+      analogWrite(motorPlus, 128);
       analogWrite(motorMinus, 0);
     } else {
       Serial.println("Limão");
-      analogWrite(motorPlus, 0.5);
+      analogWrite(motorPlus, 128);
       analogWrite(motorMinus, 0);
     }
   }
