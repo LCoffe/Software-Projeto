@@ -1,3 +1,5 @@
+motor+ = 5;
+motor- = 6;
 void setup() {
   // Inicializa a comunicação serial
   Serial.begin(9600);
@@ -19,8 +21,12 @@ void loop() {
       Serial.println("Achou algo diferente de limão e laranja");
     } else if(receivedInt < 180){
       Serial.println("Laranja");
+      analogWrite(motor+, 0.5);
+      analogWrite(motor-, 0);
     } else {
       Serial.println("Limão");
+      analogWrite(motor+, 0);
+      analogWrite(motor-, 0.5);
     }
   }
 }
