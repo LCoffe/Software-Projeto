@@ -3,6 +3,8 @@ motor- = 6;
 void setup() {
   // Inicializa a comunicação serial
   Serial.begin(9600);
+  pinMode(motor+, OUTPUT);
+  pinMode(motor-, OUTPUT);
 }
 
 void loop() {
