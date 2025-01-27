@@ -31,7 +31,7 @@ void loop() {
         analogWrite(motorMinus, 128);
       } else if(receivedInt < 180){
         Serial.println("Laranja");
-        myServo.write(40;
+        myServo.write(40);
         analogWrite(motorPlus, 128);
         analogWrite(motorMinus, 0);
         delay(1000);
