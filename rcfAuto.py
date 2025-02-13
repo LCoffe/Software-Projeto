@@ -1,7 +1,7 @@
 from ultralytics.data.annotator import auto_annotate
 import numpy as np
 #Modelo Yolo de detecção
-yolo_model = '../runs/detect/train/weights/best.pt'
+yolo_model = '../runs/detect/train10/weights/best.pt'
 
 # Função de conversão de pixels para centímetros
 def convert_pixel_cm(value):
@@ -33,7 +33,7 @@ def calculate_diameter(mask):
     return sum
 
 def reconhecimento():
-    mask, class_ids = auto_annotate(data='foto.jpg', det_model=yolo_model, sam_model='sam_b.pt')
+    mask, class_ids = auto_annotate(data='l.jpeg', det_model=yolo_model, sam_model='sam_b.pt')
     mask = np.array(mask)
     
     diameter = calculate_diameter(mask)
@@ -50,3 +50,5 @@ def reconhecimento():
     
 def main():
     return reconhecimento()
+
+print(main())

@@ -1,6 +1,6 @@
 from ultralytics import YOLO
 
-model = YOLO('runs/detect/train/weights/best.pt')
+model = YOLO('runs/detect/train10/weights/best.pt')
 
 results = model.val(#project='runs/detect',
                     imgsz=640,
